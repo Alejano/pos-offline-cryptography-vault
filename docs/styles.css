@@ -1,0 +1,92 @@
+/* styles.css - Custom styling for Fintech Engineering Showcase */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0b0f19;
+  color: #e2e8f0;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
+}
+
+.neon-border-cyan {
+  border: 1px solid #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+.neon-border-emerald {
+  border: 1px solid #34d399;
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.25);
+}
+
+.neon-border-violet {
+  border: 1px solid #a78bfa;
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Slide Transition Animations */
+.slide-item {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slide-item.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Toast Notification */
+#toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  transform: translateY(150%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+}
+#toast.show {
+  transform: translateY(0);
+}
